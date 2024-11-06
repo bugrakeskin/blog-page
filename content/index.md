@@ -1,5 +1,3 @@
-# Heloo
-
-## I'm Buğra Keskin
+## Welcome to my Blog.
 
 ::latest-blog-posts{limit=3}

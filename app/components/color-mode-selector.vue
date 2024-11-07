@@ -10,16 +10,18 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from "vue";
 const colorMode = useColorMode();
 
-function toggleColorMode() {
-  colorMode.value = colorMode.value === "dark" ? "light" : "dark";
-  /*  console.log("Color mode toggled to:", colorMode.value); */
-}
+// Define the toggleColorMode function
+const toggleColorMode = () => {
+  colorMode.preference = colorMode.preference === "dark" ? "light" : "dark";
+};
 
-// Check the initial value of colorMode on mount
-/* onMounted(() => {
-  console.log("Initial color mode:", colorMode.value);
-}); */
+// Set initial color mode from localStorage
+onMounted(() => {
+  const savedColorMode = localStorage.getItem("color-mode");
+  if (savedColorMode) {
+    colorMode.value = savedColorMode;
+  }
+});
 </script>

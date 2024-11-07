@@ -1,5 +1,5 @@
 <template>
-  <p class="mb-10">Take look my github peojects</p>
+  <p class="mb-10">Take look my github projects.</p>
   <section v-if="pending">Loading...</section>
   <section v-else-if="error">Error...</section>
   <section v-else>
@@ -32,7 +32,7 @@ interface Repository {
 }
 
 const { error, pending, data } = await useFetch<{ data: Repository[] }>(
-  "https://api.github.com/users/piotr-jura-udemy/repos"
+  "https://api.github.com/users/bugrakeskin/repos"
 );
 const repos = computed(() =>
   Array.isArray(data.value)
